@@ -1,26 +1,12 @@
 import React from "react";
-import Head from "next/head";
-import Nav from "../components/Nav/Nav";
 import { Beers } from "../components/Beers/Beers";
 import { NextPage } from "next";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { getBeers } from "../api/";
 
 interface Props {
   beers: any[];
 }
-
-const Main = styled.main`
-  margin: 0 auto;
-  padding: 8px;
-`;
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    font-family: Helvetica, sans-serif;
-  }
-`;
 
 const StyledSection = styled.section`
   display: grid;
@@ -28,24 +14,10 @@ const StyledSection = styled.section`
   grid-template-rows: repeat(auto-fit);
 `;
 
-const StyledH1 = styled.h1`
-  text-align: center;
-  letter-spacing: 2px;
-`;
-
 const Home: NextPage<Props> = ({ beers }) => (
-  <Main>
-    <Head>
-      <title>Brewdog Beers</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <GlobalStyle />
-    <Nav />
-    <StyledH1>Brewdog Beers</StyledH1>
-    <StyledSection>
-      <Beers beers={beers} />
-    </StyledSection>
-  </Main>
+  <StyledSection>
+    <Beers beers={beers} />
+  </StyledSection>
 );
 
 Home.getInitialProps = async () => {
