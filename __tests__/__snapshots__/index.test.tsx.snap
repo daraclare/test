@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage should render without throwing an error 1`] = `
+<div>
+  <nav
+    class="sc-bdVaJa khUSez"
+  >
+    <ul
+      class="sc-bwzfXH hxBrhe"
+    >
+      <li
+        class="sc-htpNat hDYkct"
+      >
+        <a
+          class="sc-bxivhb hscBq"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="sc-htpNat hDYkct"
+      >
+        <a
+          class="sc-bxivhb hscBq"
+        >
+          About
+        </a>
+      </li>
+      <li
+        class="sc-htpNat hDYkct"
+      >
+        <a
+          class="sc-bxivhb hscBq"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main
+    class="sc-ifAKCX fAUuoW"
+  >
+    Your user agent: 
+  </main>
+</div>
+`;
