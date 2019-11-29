@@ -37,9 +37,7 @@ const Nav = () => (
         </Link>
       </StyledLi>
       <StyledLi>
-        <Link href="/contact">
-          <StyledA>Contact</StyledA>
-        </Link>
+        <StyledA href="https://github.com/daraclare/test">GitHub</StyledA>
       </StyledLi>
     </StyledUl>
   </StyledNav>
