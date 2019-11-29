@@ -23,7 +23,7 @@ Details.getInitialProps = async (ctx: any) => {
   const { data } = response;
   console.log("data", data);
   console.log("response getInitial", response);
-  return { beer: data };
+  return { beer: data[0] };
 };
 
 export default Details;
