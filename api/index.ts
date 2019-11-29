@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BeerType } from "../types/types";
 
 const BEERAPI = "https://api.punkapi.com/v2/beers";
 
@@ -15,8 +16,7 @@ const beerApi = axios.create({
 });
 
 type ResponseType = {
-  data: any;
-  status: any;
+  data: BeerType[];
 };
 
 export const getBeers = async (query = {}): Promise<ResponseType> => {
@@ -27,12 +27,10 @@ export const getBeers = async (query = {}): Promise<ResponseType> => {
     const response = await beerApi({
       headers,
       method: "get",
-      url: "?page=2&per_page=80",
+      url: "?page=1&per_page=80",
       data: query
     });
-    console.log("response", response);
-    const { data } = response;
-    return { data, status };
+    return response;
   } catch (error) {
     return error;
   }

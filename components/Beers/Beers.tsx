@@ -1,25 +1,27 @@
 import React from "react";
-import Styled from "styled-components";
+import styled from "styled-components";
 import { Beer } from "./Beer";
 
-export const Beers = props => {
-  console.log("props", props);
+const StyledArticle = styled.article`
+  margin: 10px;
+  border: 1px solid lightgrey;
+  position: relative;
 
-  //   const listItems = beers && beers.map(beer => <li>{beer.id}</li>);
+  &:hover {
+    border: 1px solid slategrey;
+  }
+`;
 
-  return (
-    <>
-      {/* {listItems} */}
+export const Beers = ({ beers }) => {
+  return beers.map((beer: any) => (
+    <StyledArticle key={`beer-${beer.id}`}>
       <Beer
-        title="My Beer Title"
-        img="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://www.google.com%3Fhl%3Den-GB"
-        description="This is my beer description"
+        data-testid={`beer=${beer.id}`}
+        title={beer.name}
+        img={beer.image_url}
+        description={beer.description}
+        abv={beer.abv}
       />
-      <Beer
-        title="My Beer Title"
-        img="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://www.google.com%3Fhl%3Den-GB"
-        description="This is my beer description"
-      />
-    </>
-  );
+    </StyledArticle>
+  ));
 };

@@ -7,8 +7,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { getBeers } from "../api/";
 
 interface Props {
-  userAgent?: string;
-  data: any[];
+  beers: any[];
 }
 
 const Main = styled.main`
@@ -24,25 +23,30 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Home: NextPage<Props> = ({ beers, userAgent }) => (
+const StyledSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit);
+`;
+
+const Home: NextPage<Props> = ({ beers }) => (
   <div>
-    {console.log("data props", beers)}
     <Head>
       <title>Next JS App</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <GlobalStyle />
     <Nav />
-    <Main>Your user agent: {userAgent}</Main>
-    <Beers beers={beers} />
+    <StyledSection>
+      <Beers beers={beers} />
+    </StyledSection>
   </div>
 );
 
 Home.getInitialProps = async () => {
   const response = await getBeers();
-  const { data, status } = response;
-  console.log("data", data);
-  return { beers: { ...data }, status };
+  const { data } = response;
+  return { beers: data };
 };
 
 export default Home;
