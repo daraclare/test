@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({ beers }) => (
 );
 
 Home.getInitialProps = async () => {
-  const response = await getBeers();
+  const response = await getBeers("?page=1&per_page=80");
   const { data } = response;
   return { beers: data };
 };

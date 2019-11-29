@@ -19,15 +19,16 @@ type ResponseType = {
   data: BeerType[];
 };
 
-export const getBeers = async (query = {}): Promise<ResponseType> => {
+export const getBeers = async (query = ""): Promise<ResponseType> => {
   const headers = {
     ...baseHeaders
   };
+
   try {
     const response = await beerApi({
       headers,
       method: "get",
-      url: "?page=1&per_page=80",
+      url: query,
       data: query
     });
     return response;
