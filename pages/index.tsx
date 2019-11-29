@@ -11,9 +11,8 @@ interface Props {
 }
 
 const Main = styled.main`
-  background: lightblue;
   margin: 0 auto;
-  padding: 20px;
+  padding: 8px;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -35,9 +34,9 @@ const StyledH1 = styled.h1`
 `;
 
 const Home: NextPage<Props> = ({ beers }) => (
-  <div>
+  <Main>
     <Head>
-      <title>Next JS App</title>
+      <title>Brewdog Beers</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <GlobalStyle />
@@ -46,7 +45,7 @@ const Home: NextPage<Props> = ({ beers }) => (
     <StyledSection>
       <Beers beers={beers} />
     </StyledSection>
-  </div>
+  </Main>
 );
 
 Home.getInitialProps = async () => {

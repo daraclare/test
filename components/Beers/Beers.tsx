@@ -5,8 +5,8 @@ import { Beer } from "./Beer";
 const StyledArticle = styled.article`
   margin: 10px;
   border: 1px solid lightgrey;
+  border-radius: 16px;
   position: relative;
-
   &:hover {
     border: 1px solid slategrey;
   }
