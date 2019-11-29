@@ -17,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledH1 = styled.h1`
-  text-align: center;
   letter-spacing: 2px;
+  text-align: center;
 `;
 
 class Layout extends React.Component {

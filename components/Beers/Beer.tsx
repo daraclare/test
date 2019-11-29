@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const BeerWrapper = styled.div`
   padding: 16px;
@@ -25,15 +26,24 @@ const StyledH4 = styled.h4`
   right: 10px;
 `;
 
-export const Beer = ({ title, img, description, abv }) => {
+const StyledA = styled.a`
+  color: unset;
+  text-decoration: none;
+`;
+
+export const Beer = ({ id, title, img, description, abv }) => {
   return (
     <BeerWrapper>
-      <h2>{title}</h2>
-      <StyledDiv>
-        <StyledImg src={img} alt={`beer label`} height="100px" />
-        <StyledP>{description}</StyledP>
-      </StyledDiv>
-      <StyledH4>ABV: {abv}</StyledH4>
+      <Link href={`/${id}`}>
+        <StyledA>
+          <h2>{title}</h2>
+          <StyledDiv>
+            <StyledImg src={img} alt={`beer label`} height="100px" />
+            <StyledP>{description}</StyledP>
+          </StyledDiv>
+          <StyledH4>ABV: {abv}</StyledH4>
+        </StyledA>
+      </Link>
     </BeerWrapper>
   );
 };

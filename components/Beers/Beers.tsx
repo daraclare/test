@@ -13,15 +13,19 @@ const StyledArticle = styled.article`
 `;
 
 export const Beers = ({ beers }) => {
-  return beers.map((beer: any) => (
-    <StyledArticle key={`beer-${beer.id}`}>
-      <Beer
-        data-testid={`beer=${beer.id}`}
-        title={beer.name}
-        img={beer.image_url}
-        description={beer.description}
-        abv={beer.abv}
-      />
-    </StyledArticle>
-  ));
+  return beers.map((beer: any) => {
+    const { abv, description, id, name, image_url } = beer;
+    return (
+      <StyledArticle key={`beer-${id}`}>
+        <Beer
+          data-testid={`beer-${id}`}
+          title={name}
+          img={image_url}
+          description={description}
+          abv={abv}
+          id={id}
+        />
+      </StyledArticle>
+    );
+  });
 };
