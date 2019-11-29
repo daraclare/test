@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-type BeerDetailsProps = {};
+type BeerDetailsProps = { id: any };
 
 const StyledDiv = styled.div``;
 
-export const BeerDetails: FC<BeerDetailsProps> = () => (
+export const BeerDetails: FC<BeerDetailsProps> = ({ id }) => (
   <StyledDiv>
-    <p>hello</p>
+    <p>{id}</p>
   </StyledDiv>
 );

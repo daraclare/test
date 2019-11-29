@@ -8,7 +8,7 @@ const StyledArticle = styled.article`
   border-radius: 16px;
   position: relative;
   &:hover {
-    border: 1px solid slategrey;
+    border: 1px solid darkslategrey;
   }
 `;
 
