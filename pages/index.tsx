@@ -29,6 +29,11 @@ const StyledSection = styled.section`
   grid-template-rows: repeat(auto-fit);
 `;
 
+const StyledH1 = styled.h1`
+  text-align: center;
+  letter-spacing: 2px;
+`;
+
 const Home: NextPage<Props> = ({ beers }) => (
   <div>
     <Head>
@@ -37,6 +42,7 @@ const Home: NextPage<Props> = ({ beers }) => (
     </Head>
     <GlobalStyle />
     <Nav />
+    <StyledH1>Brewdog Beers</StyledH1>
     <StyledSection>
       <Beers beers={beers} />
     </StyledSection>
