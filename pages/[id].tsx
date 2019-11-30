@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { BeerDetails } from "../components/Beers/BeerDetails";
@@ -21,8 +21,6 @@ Details.getInitialProps = async (ctx: any) => {
 
   const response = await getBeers(asPath);
   const { data } = response;
-  console.log("data", data);
-  console.log("response getInitial", response);
   return { beer: data[0] };
 };
 

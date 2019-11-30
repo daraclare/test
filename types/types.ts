@@ -8,5 +8,5 @@ export type BeerType = {
   ingredients: any;
   food_pairing: string[];
   tagline: string;
-  method: { fermentation: any; mash_temp: any[] };
+  method: { fermentation: any; mash_temp: any[]; twist: any };
 };
