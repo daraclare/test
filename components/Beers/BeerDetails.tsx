@@ -55,12 +55,12 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
             console.log("hopItem", hopItem);
             return (
               <Checkbox
-                checkedList={checkedList}
                 key={index}
                 name={`${hopItem.name}-${hopItem.add}`}
                 spanText={hopItem.amount.value + hopItem.amount.unit}
                 text={hopItem.name}
                 handleChange={handleChange}
+                isChecked={checkedList[`${hopItem.name}-${hopItem.add}`]}
               />
             );
           })}
@@ -88,10 +88,10 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
         </h4>
         <h4>
           Mash Temp:{" "}
-          {mash_temp.map(mash => {
+          {mash_temp.map((mash, index) => {
             console.log("mash", mash);
             return (
-              <div>
+              <div key={index}>
                 <p>{mash.duration}</p>
                 <p>
                   {mash.temp.value}

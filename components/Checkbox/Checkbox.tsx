@@ -5,12 +5,12 @@ type CheckboxProps = {
   text: string;
   name: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  checkedList: any;
+  isChecked: boolean;
   spanText?: string;
 };
 
-const StyledLabel = styled.label<{ checked }>`
-  ${checked => !checked && `text-decoration: line-through;`}
+const StyledLabel = styled.label<any>`
+  ${({ isChecked }) => isChecked && `text-decoration: line-through;`}
 `;
 const StyledSpan = styled.span`
   color: grey;
@@ -21,17 +21,16 @@ export const Checkbox: FC<CheckboxProps> = ({
   text,
   handleChange,
   name,
-  checkedList,
-  spanText
+  spanText,
+  isChecked
 }) => {
-  console.log("checkedList", checkedList);
-  console.log("name", name);
+  console.log("isChecked", isChecked);
   return (
-    <StyledLabel checked={checkedList[name]}>
+    <StyledLabel htmlFor={name} isChecked={isChecked}>
       <input
         id={name}
         type="checkbox"
-        checked={checkedList[name]}
+        checked={isChecked || false}
         onChange={handleChange}
       />
       {text}
