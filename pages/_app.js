@@ -11,7 +11,7 @@ const Main = styled.main`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0;
+    margin: 16px;
     font-family: Helvetica, sans-serif;
   }
 `;
@@ -31,8 +31,8 @@ class Layout extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <GlobalStyle />
-        <Nav />
         <StyledH1>Brewdog Beers</StyledH1>
+        <Nav />
         {children}
       </Main>
     );
