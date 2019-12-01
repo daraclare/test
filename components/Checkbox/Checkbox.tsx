@@ -24,7 +24,6 @@ export const Checkbox: FC<CheckboxProps> = ({
   spanText,
   isChecked
 }) => {
-  console.log("isChecked", isChecked);
   return (
     <StyledLabel htmlFor={name} isChecked={isChecked}>
       <input

@@ -33,7 +33,6 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
   } = beer;
   const [checkedList, setChecked] = React.useState({});
   const handleChange = (event: any) => {
-    console.log("checkedList", checkedList);
     setChecked({
       ...checkedList,
       [event.target.id]: !checkedList[event.target.id]
@@ -50,34 +49,35 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
         <p>{description}</p>
         <h3>Ingredients</h3>
         <h4>Hops: </h4>
-        <ul>
-          {hops.map((hopItem: any, index: number) => {
-            console.log("hopItem", hopItem);
-            return (
+        {hops.map((hopItem: any, index: number) => {
+          return (
+            <div key={index}>
               <Checkbox
-                key={index}
                 name={`${hopItem.name}-${hopItem.add}`}
                 spanText={hopItem.amount.value + hopItem.amount.unit}
                 text={hopItem.name}
                 handleChange={handleChange}
                 isChecked={checkedList[`${hopItem.name}-${hopItem.add}`]}
               />
-            );
-          })}
-        </ul>
+            </div>
+          );
+        })}
 
         <h4>Malt: </h4>
-        <ul>
-          {malt.map((hopItem: any, index: number) => (
-            <li key={index}>
-              {hopItem.name}{" "}
-              <StyledSpan>
-                {hopItem.amount.value}
-                {hopItem.amount.unit}
-              </StyledSpan>
-            </li>
-          ))}
-        </ul>
+        {malt.map((maltItem: any, index: number) => {
+          return (
+            <div key={index}>
+              <Checkbox
+                name={`${maltItem.name}-${maltItem.add}`}
+                spanText={maltItem.amount.value + maltItem.amount.unit}
+                text={maltItem.name}
+                handleChange={handleChange}
+                isChecked={checkedList[`${maltItem.name}-${maltItem.add}`]}
+              />
+            </div>
+          );
+        })}
+
         <h4>Yeast: </h4>
         <p>{yeast}</p>
 
@@ -89,7 +89,6 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
         <h4>
           Mash Temp:{" "}
           {mash_temp.map((mash, index) => {
-            console.log("mash", mash);
             return (
               <div key={index}>
                 <p>{mash.duration}</p>
