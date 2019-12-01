@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Beers should render without throwing an error 1`] = `
+<div
+  class="sc-bdVaJa eIxvgw"
+>
+  <a
+    class="sc-EHOje hYajMM"
+  >
+    <h2
+      data-testid="beer-name"
+    >
+      Buzz
+    </h2>
+    <div
+      class="sc-bwzfXH jIEWCi"
+    >
+      <img
+        alt="beer label"
+        class="sc-htpNat cBsyOg"
+        data-testid="beer-img"
+        height="100px"
+        src="https://images.punkapi.com/v2/keg.png"
+      />
+      <p
+        class="sc-bxivhb byyMnK"
+        data-testid="beer-desc"
+      >
+        A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.
+      </p>
+    </div>
+    <h4
+      class="sc-ifAKCX cycDOG"
+      data-testid="beer-abv"
+    >
+      ABV: 
+      4.5
+    </h4>
+  </a>
+</div>
+`;

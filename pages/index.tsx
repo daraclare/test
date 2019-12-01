@@ -1,41 +1,28 @@
 import React from "react";
-import Head from "next/head";
-import Nav from "../components/nav";
+import { Beers } from "../components/Beers/Beers";
 import { NextPage } from "next";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+import { getBeers } from "../api/";
+import { Error } from "./_error";
 
 interface Props {
-  userAgent?: string;
+  beers: any[];
 }
 
-const Main = styled.main`
-  background: lightblue;
-  margin: 0 auto;
-  padding: 20px;
+const StyledSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit);
 `;
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    font-family: Helvetica, sans-serif;
-  }
-`;
-
-const Home: NextPage<Props> = ({ userAgent }) => (
-  <div>
-    <Head>
-      <title>Next JS App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <GlobalStyle />
-    <Nav />
-    <Main>Your user agent: {userAgent}</Main>
-  </div>
+const Home: NextPage<Props> = ({ beers }) => (
+  <StyledSection>{beers ? <Beers beers={beers} /> : <Error />}</StyledSection>
 );
 
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
-  return { userAgent };
+Home.getInitialProps = async () => {
+  const response = await getBeers("?page=1&per_page=80");
+  const { data } = response;
+  return { beers: data };
 };
 
 export default Home;

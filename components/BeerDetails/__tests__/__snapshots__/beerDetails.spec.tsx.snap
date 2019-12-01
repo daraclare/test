@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: BeerDetails should render without throwing an error 1`] = `
+<div
+  class="sc-bxivhb fuKkVT"
+>
+  <img
+    alt="bottle of Buzz"
+    class="sc-ifAKCX kbaKWD"
+    src="https://images.punkapi.com/v2/keg.png"
+  />
+  <div>
+    <h2
+      data-testid="beer-name"
+    >
+      Buzz
+       
+      <span>
+        (
+        A Real Bitter Experience.
+        )
+      </span>
+    </h2>
+    <p
+      data-testid="beer-abv"
+    >
+      ABV: 
+      4.5
+    </p>
+    <p
+      data-testid="beer-desc"
+    >
+      A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.
+    </p>
+    <h3>
+      Ingredients
+    </h3>
+    <h4>
+      Hops: 
+    </h4>
+    <ol>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Fuggles
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            25grams
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Fuggles-start"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          First Gold
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            25grams
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="First Gold-start"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Fuggles
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            37.5grams
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Fuggles-middle"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          First Gold
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            37.5grams
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="First Gold-middle"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Cascade
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            37.5grams
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Cascade-end"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+    </ol>
+    <h4>
+      Malt: 
+    </h4>
+    <ol>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Maris Otter Extra Pale
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            3.3kilograms
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Maris Otter Extra Pale-undefined"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Caramalt
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            0.2kilograms
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Caramalt-undefined"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+      <div>
+        <li
+          class="sc-bdVaJa ibTDPh"
+          data-testid="listItem"
+        >
+          Munich
+          <span
+            class="sc-htpNat kfjJtI"
+            data-testid="listItem-spanText"
+          >
+             
+            0.4kilograms
+             
+          </span>
+          <button
+            class="sc-bwzfXH bGgvvP"
+            data-testid="listItem-button"
+            id="Munich-undefined"
+          >
+            IDLE
+          </button>
+        </li>
+      </div>
+    </ol>
+    <h4>
+      Yeast: 
+    </h4>
+    <p>
+      Wyeast 1056 - American Ale™
+    </p>
+    <h3>
+      Methods
+    </h3>
+    <p>
+      Fermentation: 
+      19
+       
+      celsius
+    </p>
+    <div>
+      <p>
+        Mash Duration: 
+        5
+         minutes
+      </p>
+      <p>
+        Mash Temp: 
+        64
+         
+        celsius
+      </p>
+    </div>
+    <p>
+      Twist?: 
+      No
+    </p>
+  </div>
+</div>
+`;

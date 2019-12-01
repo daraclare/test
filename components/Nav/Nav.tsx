@@ -21,9 +21,10 @@ const StyledA = styled.a`
   color: #067df7;
   text-decoration: none;
   font-size: 13px;
+  cursor: pointer;
 `;
 
-const Nav = () => (
+export const Nav = () => (
   <StyledNav>
     <StyledUl>
       <StyledLi>
@@ -32,17 +33,13 @@ const Nav = () => (
         </Link>
       </StyledLi>
       <StyledLi>
-        <Link href="/about">
-          <StyledA>About</StyledA>
-        </Link>
+        <StyledA href="https://github.com/daraclare/test/blob/master/README.md">
+          ReadMe
+        </StyledA>
       </StyledLi>
       <StyledLi>
-        <Link href="/contact">
-          <StyledA>Contact</StyledA>
-        </Link>
+        <StyledA href="https://github.com/daraclare/test">GitHub</StyledA>
       </StyledLi>
     </StyledUl>
   </StyledNav>
 );
-
-export default Nav;

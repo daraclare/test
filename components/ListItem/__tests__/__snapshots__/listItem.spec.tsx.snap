@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: ListItem should render without throwing an error 1`] = `
+<li
+  class="sc-bdVaJa ibTDPh"
+  data-testid="listItem"
+>
+  Maris Otter Extra Pale
+  <span
+    class="sc-htpNat kfjJtI"
+    data-testid="listItem-spanText"
+  >
+     
+    3.3 kilograms
+     
+  </span>
+  <button
+    class="sc-bwzfXH bGgvvP"
+    data-testid="listItem-button"
+    id="Buzz"
+  >
+    IDLE
+  </button>
+</li>
+`;
