@@ -1,7 +1,7 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import Nav from "../components/Nav/Nav";
+import { Nav } from "../components/Nav/Nav";
 import styled, { createGlobalStyle } from "styled-components";
 
 const Main = styled.main`
