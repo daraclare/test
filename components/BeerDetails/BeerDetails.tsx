@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { BeerType } from "../../types/types";
-import { Checkbox } from "../Checkbox/Checkbox";
+import { ListItem } from "../ListItem/ListItem";
 
 type BeerDetailsProps = { beer: BeerType };
 
@@ -48,7 +48,7 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
           {hops.map((hopItem: any, index: number) => {
             return (
               <div key={index}>
-                <Checkbox
+                <ListItem
                   name={`${hopItem.name}-${hopItem.add}`}
                   spanText={hopItem.amount.value + hopItem.amount.unit}
                   text={hopItem.name}
@@ -65,7 +65,7 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
           {malt.map((maltItem: any, index: number) => {
             return (
               <div key={index}>
-                <Checkbox
+                <ListItem
                   name={`${maltItem.name}-${maltItem.add}`}
                   spanText={maltItem.amount.value + maltItem.amount.unit}
                   text={maltItem.name}

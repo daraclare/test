@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-type CheckboxProps = {
+type ListItemProps = {
   text: string;
   name: string;
   handleChange: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -22,7 +22,7 @@ const StyledSpan = styled.span`
   font-size: 12px;
 `;
 
-export const Checkbox: FC<CheckboxProps> = ({
+export const ListItem: FC<ListItemProps> = ({
   text,
   handleChange,
   name,
