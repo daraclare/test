@@ -16,11 +16,6 @@ const StyledImg = styled.img`
   margin: 0 auto;
 `;
 
-const StyledSpan = styled.span`
-  color: grey;
-  font-size: 0.8rem;
-`;
-
 export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
   const {
     abv,
@@ -49,34 +44,38 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
         <p>{description}</p>
         <h3>Ingredients</h3>
         <h4>Hops: </h4>
-        {hops.map((hopItem: any, index: number) => {
-          return (
-            <div key={index}>
-              <Checkbox
-                name={`${hopItem.name}-${hopItem.add}`}
-                spanText={hopItem.amount.value + hopItem.amount.unit}
-                text={hopItem.name}
-                handleChange={handleChange}
-                isChecked={checkedList[`${hopItem.name}-${hopItem.add}`]}
-              />
-            </div>
-          );
-        })}
+        <ol>
+          {hops.map((hopItem: any, index: number) => {
+            return (
+              <div key={index}>
+                <Checkbox
+                  name={`${hopItem.name}-${hopItem.add}`}
+                  spanText={hopItem.amount.value + hopItem.amount.unit}
+                  text={hopItem.name}
+                  handleChange={handleChange}
+                  isChecked={checkedList[`${hopItem.name}-${hopItem.add}`]}
+                />
+              </div>
+            );
+          })}
+        </ol>
 
         <h4>Malt: </h4>
-        {malt.map((maltItem: any, index: number) => {
-          return (
-            <div key={index}>
-              <Checkbox
-                name={`${maltItem.name}-${maltItem.add}`}
-                spanText={maltItem.amount.value + maltItem.amount.unit}
-                text={maltItem.name}
-                handleChange={handleChange}
-                isChecked={checkedList[`${maltItem.name}-${maltItem.add}`]}
-              />
-            </div>
-          );
-        })}
+        <ol>
+          {malt.map((maltItem: any, index: number) => {
+            return (
+              <div key={index}>
+                <Checkbox
+                  name={`${maltItem.name}-${maltItem.add}`}
+                  spanText={maltItem.amount.value + maltItem.amount.unit}
+                  text={maltItem.name}
+                  handleChange={handleChange}
+                  isChecked={checkedList[`${maltItem.name}-${maltItem.add}`]}
+                />
+              </div>
+            );
+          })}
+        </ol>
 
         <h4>Yeast: </h4>
         <p>{yeast}</p>
@@ -91,10 +90,9 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
           {mash_temp.map((mash, index) => {
             return (
               <div key={index}>
-                <p>{mash.duration}</p>
+                <p>Duration: {mash.duration} minutes</p>
                 <p>
-                  {mash.temp.value}
-                  {mash.temp.unit}
+                  Temp: {mash.temp.value} {mash.temp.unit}
                 </p>
               </div>
             );

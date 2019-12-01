@@ -32,8 +32,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   return (
     <StyledLi isChecked={isChecked}>
       {text}
-
-      <StyledSpan> {spanText}</StyledSpan>
+      <StyledSpan> {spanText} </StyledSpan>
       <StyledButton id={name} onClick={handleChange} isChecked={isChecked}>
         {isChecked ? "DONE" : "IDLE"}
       </StyledButton>
