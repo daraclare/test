@@ -82,18 +82,16 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
 
         <h3>Methods</h3>
         <p>
-          Fermentation: {fermentation.temp.value}
-          {fermentation.temp.unit}
+          Fermentation: {fermentation.temp.value} {fermentation.temp.unit}
         </p>
-        <p>Mash: </p>
         {mash_temp.map((mash, index) => {
           return (
-            <ul key={index}>
-              <li>Duration: {mash.duration} minutes</li>
-              <li>
-                Temp: {mash.temp.value} {mash.temp.unit}
-              </li>
-            </ul>
+            <div key={index}>
+              <p>Mash Duration: {mash.duration} minutes</p>
+              <p>
+                Mash Temp: {mash.temp.value} {mash.temp.unit}
+              </p>
+            </div>
           );
         })}
         <p>Twist?: {twist ? "Yes" : "No"}</p>
