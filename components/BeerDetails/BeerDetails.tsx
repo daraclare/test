@@ -81,24 +81,22 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
         <p>{yeast}</p>
 
         <h3>Methods</h3>
-        <h4>
+        <p>
           Fermentation: {fermentation.temp.value}
           {fermentation.temp.unit}
-        </h4>
-        <h4>
-          Mash Temp:{" "}
-          {mash_temp.map((mash, index) => {
-            return (
-              <div key={index}>
-                <p>Duration: {mash.duration} minutes</p>
-                <p>
-                  Temp: {mash.temp.value} {mash.temp.unit}
-                </p>
-              </div>
-            );
-          })}
-        </h4>
-        <h4>Twist?: {twist ? "Yes" : "No"}</h4>
+        </p>
+        <p>Mash: </p>
+        {mash_temp.map((mash, index) => {
+          return (
+            <ul key={index}>
+              <li>Duration: {mash.duration} minutes</li>
+              <li>
+                Temp: {mash.temp.value} {mash.temp.unit}
+              </li>
+            </ul>
+          );
+        })}
+        <p>Twist?: {twist ? "Yes" : "No"}</p>
       </div>
     </StyledDiv>
   );
