@@ -4,14 +4,19 @@ import styled from "styled-components";
 type CheckboxProps = {
   text: string;
   name: string;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (event: React.MouseEvent<HTMLButtonElement>) => void;
   isChecked: boolean;
   spanText?: string;
 };
 
-const StyledLabel = styled.label<any>`
+const StyledLi = styled.li<{ isChecked }>`
   ${({ isChecked }) => isChecked && `text-decoration: line-through;`}
 `;
+
+const StyledButton = styled.button<{ isChecked }>`
+  ${({ isChecked }) => isChecked && `opacity: .5;`}
+`;
+
 const StyledSpan = styled.span`
   color: grey;
   font-size: 12px;
@@ -25,15 +30,13 @@ export const Checkbox: FC<CheckboxProps> = ({
   isChecked
 }) => {
   return (
-    <StyledLabel htmlFor={name} isChecked={isChecked}>
-      <input
-        id={name}
-        type="checkbox"
-        checked={isChecked || false}
-        onChange={handleChange}
-      />
+    <StyledLi isChecked={isChecked}>
       {text}
+
       <StyledSpan> {spanText}</StyledSpan>
-    </StyledLabel>
+      <StyledButton id={name} onClick={handleChange} isChecked={isChecked}>
+        {isChecked ? "DONE" : "IDLE"}
+      </StyledButton>
+    </StyledLi>
   );
 };

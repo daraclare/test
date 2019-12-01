@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { BeerDetails } from "../components/Beers/BeerDetails";
+import { BeerDetails } from "../components/BeerDetails/BeerDetails";
 import { getBeers } from "../api";
 
 const StyledSection = styled.section`
