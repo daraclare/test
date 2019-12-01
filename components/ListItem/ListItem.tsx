@@ -30,10 +30,15 @@ export const ListItem: FC<ListItemProps> = ({
   isChecked
 }) => {
   return (
-    <StyledLi isChecked={isChecked}>
+    <StyledLi data-testid="listItem" isChecked={isChecked}>
       {text}
-      <StyledSpan> {spanText} </StyledSpan>
-      <StyledButton id={name} onClick={handleChange} isChecked={isChecked}>
+      <StyledSpan data-testid="listItem-spanText"> {spanText} </StyledSpan>
+      <StyledButton
+        data-testid="listItem-button"
+        id={name}
+        onClick={handleChange}
+        isChecked={isChecked}
+      >
         {isChecked ? "DONE" : "IDLE"}
       </StyledButton>
     </StyledLi>

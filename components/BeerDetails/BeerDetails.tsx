@@ -37,11 +37,11 @@ export const BeerDetails: FC<BeerDetailsProps> = ({ beer }) => {
     <StyledDiv>
       <StyledImg src={image_url} alt={`bottle of ${name}`} />
       <div>
-        <h2>
+        <h2 data-testid="beer-name">
           {name} <span>({tagline})</span>
         </h2>
-        <p>ABV: {abv}</p>
-        <p>{description}</p>
+        <p data-testid="beer-abv">ABV: {abv}</p>
+        <p data-testid="beer-desc">{description}</p>
         <h3>Ingredients</h3>
         <h4>Hops: </h4>
         <ol>

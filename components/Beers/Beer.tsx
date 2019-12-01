@@ -31,17 +31,22 @@ const StyledA = styled.a`
   text-decoration: none;
 `;
 
-export const Beer = ({ id, title, img, description, abv }) => {
+export const Beer = ({ id, name, img, description, abv }) => {
   return (
     <BeerWrapper>
       <Link href={`/${id}`}>
         <StyledA>
-          <h2>{title}</h2>
+          <h2 data-testid="beer-name">{name}</h2>
           <StyledDiv>
-            <StyledImg src={img} alt={`beer label`} height="100px" />
-            <StyledP>{description}</StyledP>
+            <StyledImg
+              data-testid="beer-img"
+              src={img}
+              alt={`beer label`}
+              height="100px"
+            />
+            <StyledP data-testid="beer-desc">{description}</StyledP>
           </StyledDiv>
-          <StyledH4>ABV: {abv}</StyledH4>
+          <StyledH4 data-testid="beer-abv">ABV: {abv}</StyledH4>
         </StyledA>
       </Link>
     </BeerWrapper>

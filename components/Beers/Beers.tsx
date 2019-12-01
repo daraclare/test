@@ -16,10 +16,10 @@ export const Beers = ({ beers }) => {
   return beers.map((beer: any) => {
     const { abv, description, id, name, image_url } = beer;
     return (
-      <StyledArticle key={`beer-${id}`}>
+      <StyledArticle data-testid="beer" key={`beer-${id}`}>
         <Beer
           data-testid={`beer-${id}`}
-          title={name}
+          name={name}
           img={image_url}
           description={description}
           abv={abv}
